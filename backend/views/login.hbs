@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Home</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav__login">
+            <h4>Добро пожаловать, посетитель нашего сайта!</h4>
+            <ul>
+                <li><a href="/">На главную</a></li>|
+                <li><a href="/register">Зарегистрироваться</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="login">
+            <div class="login__form">
+                <form action="/auth/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Электронная почта</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email@test.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="123456">
+                    </div>
+                    
+                    <button type="submit" class="button button-submit">Войти</button>
+                </form>
+            </div>
+        </div>
+
+        {{#if message}}
+        <h4 class="login__caption">{{message}}</h4>
+        {{/if}}
+    </section>
+
+    <footer class="footer">
+        @TShirtsHeaven - All Rights Reserved.
+    </footer>
+</body>
+</html>

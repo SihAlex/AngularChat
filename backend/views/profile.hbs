@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Home</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/profile.css">
+</head>
+<body>
+     <header class="header">
+        <nav class="nav__login">
+            <h4>Добро пожаловать, {{#if user}}{{user}}{{else}}посетитель нашего сайта{{/if}}!</h4>
+            <ul>
+                <li><a href="/">На главную</a></li>|
+                {{#unless user}}<li><a href="/login">Войти</a></li>{{else}}<li><a href="/logout">Выйти</a></li>{{/unless}}
+                {{#unless user}}|<li><a href="/register">Зарегистрироваться</a></li>{{/unless}}
+            </ul>
+        </nav>
+
+        <div class="nav__logo">
+            <a href="/"><img src="/images/logo.png" alt="TShirts Heaven"></a>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav class="nav__pages">
+            <ul>
+                <li><a href="/">Каталог</a></li>
+                <li><a href="/profile">Мой профиль</a></li>
+                <li><a href="/cart">Корзина</a></li>
+                <li><a href="/orders">Заказы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="profile__info">
+        <div class="profile__info__caption"><h3>Информация о профиле:</h3></div>
+        <div class="profile__info__item"><div>Номер телефона:</div><div class="profile__info__data">{{phone}}</div></div>
+        <div class="profile__info__item"><div>Email:</div><div class="profile__info__data">{{email}}</div></div>
+    </section>
+
+    <footer class="footer">
+        @TShirtsHeaven - All Rights Reserved.
+    </footer>
+</body>
+</html>
